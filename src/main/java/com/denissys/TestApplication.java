@@ -12,11 +12,11 @@ public class TestApplication extends Application {
 	@Inject
 	private Instance<Resource> resources;
 	
-    @Override
+	@Override
 	public Set<Class<?>> getClasses() {
-        final Set<Class<?>> resourceList = new LinkedHashSet<Class<?>>();
-        resources.forEach(resource -> resourceList.add(resource.getClass()));
-        return resourceList;
-    }
+		final Set<Class<?>> resourceList = new LinkedHashSet<Class<?>>();
+		resources.forEach(resource -> resourceList.add(resource.getClass()));
+		return resourceList;
+	}
 
 }
