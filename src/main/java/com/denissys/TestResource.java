@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/test")
-public class TestResource {
+public class TestResource implements Resource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)

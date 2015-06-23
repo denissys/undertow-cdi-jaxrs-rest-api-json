@@ -3,15 +3,20 @@ package com.denissys;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import javax.enterprise.inject.Instance;
+import javax.inject.Inject;
 import javax.ws.rs.core.Application;
 
 public class TestApplication extends Application {
 
+	@Inject
+	private Instance<Resource> resources;
+	
     @Override
 	public Set<Class<?>> getClasses() {
-        final Set<Class<?>> resourcesList = new LinkedHashSet<Class<?>>();
-		resourcesList.add(TestResource.class);
-        return resourcesList;
+        final Set<Class<?>> resourceList = new LinkedHashSet<Class<?>>();
+        resources.forEach(resource -> resourceList.add(resource.getClass()));
+        return resourceList;
     }
 
 }
