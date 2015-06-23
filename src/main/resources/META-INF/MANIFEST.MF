@@ -1,1 +1,1 @@
-Main-Class: com.denissys.core.EmbeddedServer
+Main-Class: com.denissys.MyApplication
