@@ -124,7 +124,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.denissys.Server</mainClass>
+							<mainClass>com.denissys.core.EmbeddedServer</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Class-Path>.</Class-Path>

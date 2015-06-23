@@ -1,9 +1,11 @@
-package com.denissys;
+package com.denissys.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.denissys.bean.AnyBean;
 
 @Path("/test")
 public class TestResource implements Resource {

@@ -1,4 +1,4 @@
-package com.denissys;
+package com.denissys.bean;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.denissys;
+package com.denissys.resource;
 
 public interface Resource {
 

@@ -1,4 +1,4 @@
-package com.denissys;
+package com.denissys.resource;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
