@@ -4,4 +4,4 @@ Sample of JEE Application + CDI + Embedded Servlet Container with Undertow + RES
   To run the jar:
   
     mvn clean install
-    java -jar target/embedded/app.jar
+    java -jar target/embedded-app/app.jar
