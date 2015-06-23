@@ -7,7 +7,7 @@ import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.ws.rs.core.Application;
 
-public class TestApplication extends Application {
+public class ResourceFactory extends Application {
 
 	@Inject
 	private Instance<Resource> resources;

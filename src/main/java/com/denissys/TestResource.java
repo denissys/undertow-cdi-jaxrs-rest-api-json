@@ -8,17 +8,17 @@ import javax.ws.rs.core.MediaType;
 @Path("/test")
 public class TestResource implements Resource {
 
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String test(){
-        return "Hello Any Test";
-    }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/json")
-    public AnyBean json(){
-        return new AnyBean();
-    }
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String test(){
+		return "Hello Any Test";
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/json")
+	public AnyBean json(){
+		return new AnyBean();
+	}
     
 }
