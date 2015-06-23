@@ -10,6 +10,7 @@ import javax.ws.rs.core.Application;
 import org.jboss.resteasy.cdi.CdiInjectorFactory;
 import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
 import org.jboss.resteasy.spi.ResteasyDeployment;
+import org.jboss.weld.environment.servlet.Listener;
 
 public class Server {
 
@@ -38,7 +39,7 @@ public class Server {
 		        .setClassLoader(Server.class.getClassLoader())
 		        .setContextPath("/app-name")
 		        .setDeploymentName("app-name")
-		        .addListeners(Servlets.listener(org.jboss.weld.environment.servlet.Listener.class));
+		        .addListeners(Servlets.listener(Listener.class));
 		server.deploy(deploymentInfo);
 	}
 }
