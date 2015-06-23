@@ -8,5 +8,6 @@ Sample of JEE Application + CDI + Embedded Servlet Container with Undertow + RES
 
 
   After the run, test in your browser:
-      
+    
+    http://localhost:8080/app-name/api/test  
     http://localhost:8080/app-name/api/test/json
