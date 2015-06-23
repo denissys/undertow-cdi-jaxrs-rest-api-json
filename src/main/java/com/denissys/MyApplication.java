@@ -9,11 +9,11 @@ public class MyApplication {
 
 	public static void main(String[] args) throws ServletException {
 		
-		new EmbeddedServer(8080, "0.0.0.0")
+		new EmbeddedServer("0.0.0.0", 8080)
 			.contextPath("/app-name")
 			.deploymentName("app-name")
 			.appPath("/api")
-			.applicationClass(ResourceFactory.class)
+			.resourcesClass(ResourceFactory.class)
 			.start();
 	}
 	

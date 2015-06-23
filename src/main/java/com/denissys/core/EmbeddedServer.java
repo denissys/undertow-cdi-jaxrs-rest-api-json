@@ -18,8 +18,13 @@ public class EmbeddedServer {
 	private String contextPath = "/app-name";
 	private String deploymentName = "app-name";
 	private String appPath = "/api";
-	private Class<? extends Application> applicationClass;
+	private Class<? extends Application> resourcesClass;
 
+	public EmbeddedServer(final String host, final Integer port) {
+		Undertow.Builder serverBuilder = Undertow.builder().addHttpListener(port, host);
+		this.undertowJaxrsServer.start(serverBuilder);
+	}
+	
 	public EmbeddedServer contextPath(final String contextPath) {
 		this.contextPath = contextPath;
 		return this;
@@ -35,20 +40,15 @@ public class EmbeddedServer {
 		return this;
 	}
 	
-	public EmbeddedServer applicationClass(final Class<? extends Application> applicationClass) {
-		this.applicationClass = applicationClass;
+	public EmbeddedServer resourcesClass(final Class<? extends Application> resourcesClass) {
+		this.resourcesClass = resourcesClass;
 		return this;
 	}
 	
-	public EmbeddedServer(Integer port, String host) {
-		Undertow.Builder serverBuilder = Undertow.builder().addHttpListener(port, host);
-		this.undertowJaxrsServer.start(serverBuilder);
-	}
-	
-	public DeploymentInfo deployApplication() {
+	private DeploymentInfo deployApplication() {
 		final ResteasyDeployment deployment = new ResteasyDeployment();
 		deployment.setInjectorFactoryClass(CdiInjectorFactory.class.getName());
-		deployment.setApplicationClass(applicationClass.getName());
+		deployment.setApplicationClass(resourcesClass.getName());
 		return this.undertowJaxrsServer.undertowDeployment(deployment, appPath);
 	}
 	
